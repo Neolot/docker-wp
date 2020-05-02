@@ -1,3 +1,3 @@
-# Локальная разработка Wordpress в Docker
+# Локальная разработка Wordpress в Docker в Ubuntu
 
 Документация в разработке.
