@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker stop $(docker ps -a -q);
+docker stop docker-wp_db docker-wp_wp;
