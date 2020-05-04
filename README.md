@@ -1,7 +1,7 @@
 # Локальная разработка Wordpress в Docker на Ubuntu
 
-Это заготовка для разворачивания Wordpress в Docker на Ubuntu для локальной разработки.  
-Всё это работает на Apache, PHP 7.3, MySQL 8, XDebug, Wordpress и WP-CLI.
+Сборка для установки Wordpress в Docker на Ubuntu для локальной разработки.  
+Работает на Apache, PHP 7.3, MySQL 8, XDebug, Wordpress и WP-CLI.
 
 Убедитесь, что у вас уже установлен `git`, `docker` и `docker-compose`.  
 Если нет, мануалы по установке смотрите ниже.
