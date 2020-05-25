@@ -22,11 +22,11 @@ $ bin/docker-start.sh
 $ bin/docker-stop.sh
 ```
 
-## restore-db.sh
+## import-db.sh
 Скрипт для загрузки БД сайта в контейнер, например, когда нужно развернуть сайт локально.  
 В качестве параметра надо указать путь к файлу импорта.
 ```bash
-$ bin/restore-db.sh import.sql
+$ bin/import-db.sh import.sql
 ```
 1. Импортирует БД.
 2. Заменяет домен согласно настройкам в docker-compose.yml (ищет строки с LIVE_URL и заменяет на DEV_URL).
