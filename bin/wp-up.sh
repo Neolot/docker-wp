@@ -25,6 +25,10 @@ if test -f "$import"; then
     docker-compose exec wp sh -c "$cmd"
 fi
 
-# Set container permissions
+# Set container ownership
 cmd="chown -R www-data:www-data /var/www/html"
+docker-compose exec wp sh -c "$cmd"
+
+# Set container permissions
+cmd="chmod -R 777 /var/www/html"
 docker-compose exec wp sh -c "$cmd"
