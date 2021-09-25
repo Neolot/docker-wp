@@ -5,7 +5,7 @@ services:
         container_name: docker-wp_db
         image: mysql:8
         ports:
-            - 127.0.0.1:3306:3306
+            - "127.0.0.1:3306:3306"
         volumes:
             - db_data:/var/lib/mysql
         environment:
@@ -21,7 +21,7 @@ services:
         container_name: docker-wp_wp
         build: .
         ports:
-            - 127.0.0.1:80:80
+            - "127.0.0.1:80:80"
         volumes:
             - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
             - ./project:/var/www/html
@@ -35,6 +35,7 @@ services:
             DB_PREFIX: wp_
             WP_ADMIN: admin
             WP_ADMIN_EMAIL: admin@example.com
+            WP_ADMIN_PASSWORD: 123456
             WP_TITLE: Test
             LIVE_URL: https://production.site
             DEV_URL: http://development.local
