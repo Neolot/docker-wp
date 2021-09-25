@@ -1,7 +1,7 @@
 # Локальная разработка Wordpress в Docker на Ubuntu
 
 Сборка для установки Wordpress в Docker на Ubuntu для локальной разработки.  
-Работает на Apache, PHP 7.3, MySQL 8, XDebug, Wordpress и WP-CLI.
+Работает на Apache, PHP 7.4, MySQL 8, XDebug, Wordpress и WP-CLI.
 
 Убедитесь, что у вас уже установлен `git`, `docker` и `docker-compose`.  
 Если нет, мануалы по установке смотрите ниже.
@@ -26,15 +26,9 @@ $ cd docker-wp/
 ```
 ### Установка проекта
 ```shell script
-$ docker-compose up -d --build
+$ ./install.sh
 ```
-После этого начнется скачивание образов и установка контейнеров, необходимых для работы.
-### Финальная настройка
-Для финальной настройки запустите скрипт, который автоматизирует рутинные операции по настройке Wordpress перед запуском.
-```shell script
-$ bin/wp-up.sh
-```
-Подробнее про вспомогательные скрипты читайте в файле `bin/README.md`.
+После этого начнется скачивание образов и установка контейнеров.
 
 Если всё прошло успешно, сайт будет доступен по адресу:
 ```text
@@ -55,6 +49,13 @@ $ bin/docker-start.sh
 ```shell script
 $ bin/docker-stop.sh
 ```
+
+### Удаление проекта
+```shell script
+$ ./uninstall.sh
+```
+При этом будет удалена БД и все файлы в папке `project`.
+
 ## Установка docker и docker-compose
 [How To Install and Use Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
 [Установка Docker Compose в Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04-ru)
