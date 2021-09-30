@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-docker stop docker-wp_db docker-wp_wp;
+# shellcheck disable=SC2046
+this_dir=$(cd `dirname $0` && pwd)
+docker-compose -f "$this_dir"/../docker-compose.yml stop
