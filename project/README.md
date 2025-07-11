@@ -1,6 +1,6 @@
-# Папка проекта
-Здесь будут файлы Wordpress после разворачивания контейнеров.
+# Project Folder
+WordPress files will be located here after deploying the containers.
 
-Когда контейнеры будут созданы, вы сможете скопировать сюда свою тему, плагины, картинки и все что вам нужно для локальной работы.
+Once the containers are created, you can copy your theme, plugins, images, and everything you need for local development here.
 
-Если переносите уже рабочий сайт, не забудьте скопировать в **wp-config.php** свои константы и Authentication Unique Keys and Salts.
+If you are transferring an existing working site, don't forget to copy your constants and Authentication Unique Keys and Salts to **wp-config.php**.

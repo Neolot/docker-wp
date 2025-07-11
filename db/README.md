@@ -1,1 +1,1 @@
-# Папка для импорта/экспорта файлов БД.  
+# Folder for database import/export files.  

@@ -1,4 +1,4 @@
-# Папка для файлов конфигурации.
+# Configuration Files Folder
 
 ## php.conf.ini
-Конфиг для PHP.
+Configuration file for PHP.
