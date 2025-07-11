@@ -1,4 +1,5 @@
 /.idea
 /project/*
 /db/*
+!/db/init/
 !README.md

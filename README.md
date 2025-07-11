@@ -1,68 +1,64 @@
-# Локальная разработка Wordpress в Docker на Ubuntu
+# Local WordPress Development in Docker on Ubuntu
 
-Сборка для установки Wordpress в Docker на Ubuntu для локальной разработки.  
-Работает на Apache, PHP 7.4, MySQL 8, XDebug, Wordpress и WP-CLI.
+A setup for installing WordPress in Docker on Ubuntu for local development.  
+Runs on Apache, PHP 8.4, MySQL 8, XDebug, WordPress, and WP-CLI.
 
-Убедитесь, что у вас уже установлен `git`, `docker` и `docker-compose`.  
-Если нет, мануалы по установке смотрите ниже.
+Make sure you already have `git`, `docker`, and `docker-compose` installed.  
+If not, see the installation guides below.
 
-## Установка
-### Создайте проект
-Скачайте и скопируйте файлы в папку, где будет находиться ваш проект.  
-Можете скачать zip-архив или просто набрать в консоли:
+## Installation
+### Create a project
+Download and copy the files to the folder where your project will be located.  
+You can download the zip archive or simply type in the console:
 ```shell script
 $ git clone https://github.com/Neolot/docker-wp.git
 ```
-После создания проекта, перейдите в папку `docker-wp`:
+After creating the project, navigate to the `docker-wp` folder:
 ```shell script
 $ cd docker-wp/
 ```
-### Конфигурация
-В файле `docker-compose.yml` в секции `environment` содержатся все настройки для работы проекта.  
-Можете оставить как есть или изменить по своему вкусу.  
-Не забудьте добавить локальный домен в ваш `hosts`. По-умолчанию это `development.site`:
+### Configuration
+The `docker-compose.yml` file contains all the settings for the project in the `environment` section.  
+You can leave it as is or modify it to your liking.  
+Don't forget to add the local domain to your `hosts` file. By default, it's `development.site`:
 ```text
 127.0.0.1   development.site
 ```
-#### Импорт БД при установке
-Скрипт может автоматически импортировать БД во время установки.  
-Положите файл импорта с именем `import.sql` в папку `db`, и он будет загружен.
+#### Database import during installation
+The script can automatically import a database during installation.  
+Place an import file named `import.sql` in the `db` folder, and it will be loaded.
 
-Убедитесь, что в `docker-compose.yml` указан домен того сайта, из которого вы сделали экспорт (параметр `LIVE_URL`).
-Тогда при импорте домен сайта будет автоматически изменен на значение параметра `DEV_URL`.
+Make sure that the domain of the site from which you exported the database is specified in `docker-compose.yml` (the `LIVE_URL` parameter).
+Then during import, the site domain will be automatically changed to the value of the `DEV_URL` parameter.
 
-### Установка проекта
+### Project installation
 ```shell script
 $ ./install.sh
 ```
-После этого начнется скачивание образов и установка контейнеров.
+After this, the images will start downloading and the containers will be installed.
 
-Если всё прошло успешно, сайт будет доступен по адресу:
+If everything went successfully, the site will be available at:
 ```text
 http://development.site
 ```
-Если после запуска у вас ошибка:
+If you get an error after launching:
 > /usr/bin/env: ‘bash\r’: No such file or directory
 
-то просто поменяйте переносы в скрипте на `LF` и повторно запустите скрипт.
-## Запуск и остановка контейнеров
-После первого запуска контейнеры сразу готовы к работе. И вам больше не нужно каждый раз заново все устанавливать, ведь контейнеры уже созданы.
+simply change the line endings in the script to `LF` and run the script again.
+## Starting and stopping containers
+After the first launch, the containers are immediately ready to work. And you no longer need to reinstall everything each time, as the containers are already created.
 
-Запустить контейнеры:
+Start containers:
 ```shell script
 $ bin/docker-start.sh
 ```
-Остановить контейнеры:
+Stop containers:
 ```shell script
 $ bin/docker-stop.sh
 ```
 
-### Удаление проекта
+### Uninstalling the project
 ```shell script
 $ ./uninstall.sh
 ```
-При этом будет удалена БД и все файлы в папке `project`.
-
-## Установка docker и docker-compose
-[How To Install and Use Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)  
-[Установка Docker Compose в Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04-ru)
+This will delete the database and all files in the `project` folder.
