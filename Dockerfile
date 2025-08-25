@@ -1,10 +1,9 @@
 FROM wordpress:php8.4-apache
 
-# Install xdebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN apt update && apt -y install less zip unzip
 
-# Install Less for WP-CLI
-RUN apt-get update && apt-get -y install less
+# Install Xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Install WP-CLI
 RUN curl -s -o /usr/local/bin/wp \
