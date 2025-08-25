@@ -1,4 +1,4 @@
-# Local WordPress Development in Docker on Ubuntu
+# Local WordPress Development in Docker on Debian/Ubuntu Linux
 
 A setup for installing WordPress in Docker on Ubuntu for local development.  
 Runs on Apache, PHP 8.4, MySQL 8, XDebug, WordPress, and WP-CLI.
